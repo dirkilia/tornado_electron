@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+</head>
+<body>
+    <h2 id="name"></h2>
+    <script src="./renderer.js"></script>
+    <script>
+
+        window.addEventListener("load", () => {
+
+            let name = document.getElementById("name")
+
+            fetch("http://localhost:3000")
+            .then(response => response.json())
+            .then(data => (name.innerText = data.name + ' ' + data.surname))
+            .catch(error => (error => (name.innerText = error.message)))
+        })
+    </script>
+</body>
+</html>
