@@ -1,6 +1,4 @@
-pip install tornado
-npm i
-python index.py
-npm start
-
-pause
+call pip install tornado
+call npm i
+start index.py
+call npm start
